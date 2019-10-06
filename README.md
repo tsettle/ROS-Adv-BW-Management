@@ -127,11 +127,15 @@ add kind=pcq name=64k_down pcq-classifier=src-address pcq-rate=64k
 add name=Unknown parent=Main queue=64k_up/64k_down target=""
 ```
 
-###
+### Wrapping Up
 
 There's a lot to digest.  I'm not covering things like setting up the DHCP server or address lists.  Truth be told, those are pretty basic items, but here's a few images that might help.
 
 ![queues](images/queue-simple.png)
 
 ![mangle](images/firewall-mangle.png)
+
+![dhcp](images/dhcp-lease.png)
+
+![dhcp-disco](images/dhcp-lease-disco.png)
 
