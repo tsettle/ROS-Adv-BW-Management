@@ -18,7 +18,6 @@ add name=6M packet-marks=6M parent=Main queue=6_up/6_down
 add name=10M packet-marks=10M parent=Main queue=10_up/10_down
 add name=25M packet-marks=25M parent=Main queue=25_up/25_down
 add name=64k packet-marks=UNKNOWN parent=Main queue=64k_up/64k_up
-add name=Unknown parent=Main queue=64k_up/64k_down target=""
 
 /ip firewall filter
 add action=drop chain=forward src-address-list=DISCO
