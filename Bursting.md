@@ -16,7 +16,7 @@ Our packages will be modified to the following:
 * 25M MIR / 10M CIR - Suitable for up to 3-4 streams @ 2Mbit/s each
 * 10M MIR / 5M CIR - Suitable for 2 streams
 * 6M MIR / 3M CIR - Suitable for 1 stream (maybe 2 with some buffering)
-* 3M MIR / 1M CIR - Streaming is a joke... sell them more bandwidth
+* 3M MIR / 1.5M CIR - Streaming is a joke... sell them more bandwidth
 
 It's really not rocket science, just a few things to add to the configurations in the main tutorial.
 
