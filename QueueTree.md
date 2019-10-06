@@ -76,8 +76,10 @@ add name=3M_Downlaod packet-mark=3M_DOWN parent=Download queue=3_down
 add name=6M_Downlaod packet-mark=6M_DOWN parent=Download queue=6_down
 add name=10M_Downlaod packet-mark=10M_DOWN parent=Download queue=10_down
 add name=25M_Downlaod packet-mark=25M_DOWN parent=Download queue=25_down
-add max-limit=10M name="John Smith Upload" packet-mark=JOHN_SMITH_UP parent=Upload
-add max-limit=10M name="John Smith Download" packet-mark=JOHN_SMITH_DOWN parent=Download
+add comment="Custom Package" max-limit=10M name="John Smith Upload" packet-mark=JOHN_SMITH_UP parent=Upload
+add comment="Custom Package" max-limit=10M name="John Smith Download" packet-mark=JOHN_SMITH_DOWN parent=Download
+add name=Unknown_Upload packet-mark=UNKNOWN_UP parent=Upload queue=64k_up
+add name=Unknown_Download packet-mark=UNKNOWN_DOWN parent=Download queue=64k_down
 ```
 
 ## Notes
