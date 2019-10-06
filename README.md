@@ -131,11 +131,19 @@ add name=Unknown parent=Main queue=64k_up/64k_down target=""
 
 There's a lot to digest.  I'm not covering things like setting up the DHCP server or address lists.  Truth be told, those are pretty basic items, but here's a few images that might help.
 
+As you can see, the queues all consume bandwidth from the parent.  I highly suggest running a bandwidth test to determine the true capcity of your link, then setting the parent quuee to about 95% of the actual capcity.
+
 ![queues](images/queue-simple.png)
+
+Here are the mangle rules.  Nothing special, but added a couple comments.
 
 ![mangle](images/firewall-mangle.png)
 
+Here's a DHCP lease with an address list set to 25M
+
 ![dhcp](images/dhcp-lease.png)
+
+Here's the same lease after the customer has been disconnected.
 
 ![dhcp-disco](images/dhcp-lease-disco.png)
 
