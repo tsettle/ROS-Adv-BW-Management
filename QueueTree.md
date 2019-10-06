@@ -2,7 +2,7 @@
 
 Exploring the difference between Simple Queues and Queue Trees.
 
-I *think* I'm getting a complete apples-to-apples config here.  I do not personally use queue trees for bandwidth management any more, so am unable to test annything.
+I *think* I'm getting a complete apples-to-apples config here.  I do not personally use queue trees for bandwidth management any more, so am unable to test anything.
 
 ## Simple Queues
 
