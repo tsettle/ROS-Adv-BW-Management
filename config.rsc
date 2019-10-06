@@ -11,7 +11,7 @@ add kind=pcq name=64k_up pcq-classifier=dst-address pcq-rate=64k
 add kind=pcq name=64k_down pcq-classifier=src-address pcq-rate=64k
 
 /queue simple
-add limit-at=20M/100M max-limit=30M/150M name=Main target=ether2
+add max-limit=40M/200M name=Main target=ether2
 add max-limit=10M/10M name="Special Customer" parent=Main target=100.65.28.254/32
 add name=3M packet-marks=3M parent=Main queue=3_up/3_down
 add name=6M packet-marks=6M parent=Main queue=6_up/6_down
