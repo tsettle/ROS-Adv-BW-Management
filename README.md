@@ -3,7 +3,8 @@ MikroTik's RouterOS gives you the tools to create an advanced bandwidth manageme
 
 In this scenario, we're working with the following requirements:
 
-* 200M total bandwidth available
+* 200M total bandwidth available 
+* ether2 is the customer-facing interface
 * Unknown number of users need to share this bandwidth
 * Each user will be assigned one of 4 different bandwidth packages
   * 3M
@@ -54,7 +55,7 @@ add action=mark-packet chain=postrouting dst-address-list=3M new-packet-mark=3M 
 add action=mark-packet chain=prerouting in-interface=ether2 new-packet-mark=3M packet-mark=no-mark passthrough=no src-address-list=3M
 ```
 
-### Provisioning
+### Basic Provisioning
 
 At this point, there are a couple ways to handle provisioning.  DHCP and Firewall Address Lists.
 
@@ -119,10 +120,18 @@ My preferred method is to let them have a very little bit of bandwidth.  Enough 
 
 ```
 /queue type
-add kind=pcq name=64k pcq-rate=64k
+add kind=pcq name=64k_up pcq-classifier=dst-address pcq-rate=64k
+add kind=pcq name=64k_down pcq-classifier=src-address pcq-rate=64k
 
 /queue simple
-add name=64k packet-marks=UNKNOWN parent=Main queue=64k/64k
+add name=Unknown parent=Main queue=64k_up/64k_down target=""
 ```
 
+###
+
+There's a lot to digest.  I'm not covering things like setting up the DHCP server or address lists.  Truth be told, those are pretty basic items, but here's a few images that might help.
+
+![queues](images/queue-simple.png)
+
+![mangle](images/firewall-mangle.png)
 
